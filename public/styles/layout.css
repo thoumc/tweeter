@@ -20,6 +20,55 @@ body {
   background-color: #eee;
 }
 
+
+main {
+
+  width: 450px;
+  margin-top: 140px;
+  margin-right:auto;
+  margin-left: auto;
+  background-color: white;
+  color: black;
+  padding-left: 2em;
+  padding-right: 2em;
+  padding-top: 10em;
+  padding-bottom: 10em
+
+}
+
+section{
+  border: solid lightgrey 1px;
+  border-radius: 5px;
+  background-color: #eee;
+  padding-left:1em;
+  padding-right: 1em;
+  padding-bottom: 1em;
+}
+
+textarea{
+  justify-content: stretch;
+  width: -webkit-fill-available;
+  padding-left: 1em;
+  padding-right: 1em;
+  align-content: center;
+}
+
+.counter{
+  float: right;
+  margin-top: 5px;
+}
+
+form > input {
+  margin-right: 0;
+
+}
+
+.new-tweet > h2 {
+  border-bottom: solid 1px;
+  margin-top: 10px;
+  margin-bottom:10px;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
