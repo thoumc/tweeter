@@ -48,8 +48,6 @@ section{
 textarea{
   justify-content: stretch;
   width: -webkit-fill-available;
-  padding-left: 1em;
-  padding-right: 1em;
   align-content: center;
 }
 
