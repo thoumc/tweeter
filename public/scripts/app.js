@@ -33,7 +33,7 @@ function renderTweets(tweets) {
 
   tweets.forEach(function(post){
     var $newPost = createTweetElement(post);
-    $tweets.append($newPost);
+    $tweets.prepend($newPost);
 
   });
 
