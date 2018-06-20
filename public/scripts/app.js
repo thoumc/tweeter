@@ -4,14 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-$(document).ready(function(){
-
- renderTweets(data);
-
-})
-
-
-
 const data = [
   {
     "user": {
@@ -80,22 +72,25 @@ function createTweetElement (tweet){
           </div>
         </article>`;
 
-  return $tweet
-  console.log($tweet);
+  return $tweet;
  }
 
 function renderTweets(tweets) {
-  let $tweets = $('<article>').addClass('tweet-article');
+  let $tweets = $('#tweets-container')
 
   tweets.forEach(function(post){
-    var $newTweet = createTweetElement(post);
-    $tweets.append($newTweet);
+    var $newPost = createTweetElement(post);
+    $tweets.append($newPost);
 
   });
 
-  $('#tweets-container').append($tweets);
 }
 
 
+$(document).ready(function(){
+
+ renderTweets(data);
+
+})
 
 

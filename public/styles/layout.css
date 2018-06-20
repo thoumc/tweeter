@@ -47,7 +47,7 @@ section{
 
 textarea{
   justify-content: stretch;
-  width: -webkit-fill-available;
+  width: 100%;
   align-content: center;
 }
 

@@ -23,7 +23,6 @@
     <link rel="stylesheet" href = "/styles/tweetbody.css" type= "text/css"/>
 
 
-
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -32,9 +31,28 @@
 
     <!-- Counter JS -->
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-    <!-- Tweet Hover JS -->
-    <script type="text/javascript" src="/scripts/tweet-hover.js"></script>
+    <!-- Form JS -->
+    <script type="text/javascript" src="/scripts/form-action.js"></script>
 
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+    <!-- Ajax -->
+    <script>
+    $(function() {
+      var $button = $('#load-more-posts');
+      $button.on('click', function () {
+        console.log('Button clicked, performing ajax call...');
+        $.ajax({
+          url: 'more-posts.html',
+          method: 'GET',
+          success: function (morePostsHtml) {
+            console.log('Success: ', morePostsHtml);
+            $button.replaceWith(morePostsHtml);
+          }
+        });
+      });
+    });
+    </script>
   </head>
 
   <body>
@@ -56,30 +74,6 @@
         </form>
       </section>
       <section id="tweets-container">
-        <article class= "tweet-article">
-          <header class= "tweet-header">
-            <img class="avatar"/>
-          <h2 class="tweet-name">Bill Fields</h2>
-
-          <span class="tweet-userid">@username</span>
-        </header>
-        <div class="tweet-block">
-        <p class="the-tweet-body">little tweet here</p>
-        <span class="tweet-day">
-          10 days ago
-        </span>
-          <span class = "tweet-icons">
-          <i class="fas fa-heart"></i>
-          <i class="fas fa-flag"></i>
-          <i class="fas fa-retweet"></i>
-        </span>
-
-
-
-      </div>
-
-        </article>
-
       </section>
     </main>
 

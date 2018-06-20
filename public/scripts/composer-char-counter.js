@@ -12,4 +12,6 @@ $(document).ready(function() {
   })
 });
 
+// add class and remove class of visuals so that,
+// from css we can add it
 

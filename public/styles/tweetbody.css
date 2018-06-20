@@ -2,17 +2,29 @@
   padding-left: 0px;
   padding-right: 0px;
   padding-bottom: 0px;
-  opacity:0.5;
+  background-color: transparent;
+  border: transparent;
 
 }
 
-#tweets-container:hover {
+article {
+  opacity:0.5;
+  border: solid 1px grey;
+  border-radius: 5px;
+  margin-top: 0.5em;
+  margin-bottom:0.5em;
+
+}
+
+article:hover {
   opacity: 1.0;
 }
+
 .tweet-header{
-  height: 3em;
+  height: 4em;
   padding-top:0.5em;
   padding-bottom: 0.5em;
+  background-color:#eee;
 }
 .avatar{
   border-radius:5px;
@@ -41,11 +53,10 @@
 }
 
 .the-tweet-body{
-    width: -webkit-fill-available;
+    width: 100%;
     text-align: left;
-    padding-top: 1em;
     margin-right: 1em;
-    margin-left: 1em;
+    padding-left: 1em;
     margin-bottom:0;
     height: fit-content;
     border-bottom: solid darkgrey 1px;
@@ -62,6 +73,10 @@
   margin-right:1em;
   color:#00a087;
   opacity: 0;
+}
+
+article.tweet-article:hover .tweet-icons{
+  opacity:1;
 }
 
 
