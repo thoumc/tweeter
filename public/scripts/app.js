@@ -3,6 +3,11 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+function escape(str) {
+  var div = document.createElement('div');
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
 
 
 function createTweetElement (tweet){
@@ -15,7 +20,7 @@ function createTweetElement (tweet){
             <span class="tweet-userid">${tweet.user.handle}</span>
           </header>
           <div class="tweet-block">
-            <p class="the-tweet-body">${tweet.content.text}</p>
+            <p class="the-tweet-body">${escape(tweet.content.text)}</p>
             <span class="tweet-day">${tweet.created_at}</span>
             <span class = "tweet-icons">
                 <i class="fas fa-heart"></i>
@@ -45,6 +50,8 @@ function loadTweets(){
     type: 'GET'
   }).success(function(jsonContent){
     renderTweets(jsonContent);
+    $(".counter").text(140);
+
     });
 }
 
@@ -55,7 +62,9 @@ function ajaxSubmitPost (data){
         url: '/tweets',
         data: data
       }).done(function(){
+        escape()
         loadTweets();
+
       });
 }
 
@@ -75,7 +84,8 @@ $(document).ready(function(){
   } else {
     let tweetData = $(this).find("textarea").serialize();
     ajaxSubmitPost(tweetData);
-    $(this).find("textarea").val('');
+    $(this).find("textarea").val("")
+
   }
 });
 

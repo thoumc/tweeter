@@ -24,4 +24,16 @@ nav {
   line-height: 2.5;
 }
 
+nav > button {
+    float: right;
+    margin: 2em;
+    border-radius: 5px;
+    background-color: #eee;
+    color:#00a087;
+    height:2em;
+}
 
+nav > button:hover {
+  background-color: white;
+  color:black;
+}
