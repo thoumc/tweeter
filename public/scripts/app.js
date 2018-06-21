@@ -34,61 +34,54 @@ function createTweetElement (tweet){
  }
 
 function renderTweets(tweets) {
-  let $tweets = $('#tweets-container')
+  let $tweets = $('#tweets-container');
 
-  tweets.forEach(function(post){
+  tweets.forEach(function(post) {
     var $newPost = createTweetElement(post);
     $tweets.prepend($newPost);
-
   });
-
 }
 
-function loadTweets(){
+function loadTweets() {
   $.ajax({
     url: '/tweets',
     type: 'GET'
-  }).success(function(jsonContent){
+  }).success(function(jsonContent) {
     renderTweets(jsonContent);
     $(".counter").text(140);
-
-    });
+  });
 }
 
 
-function ajaxSubmitPost (data){
-  $.ajax({
-        method: 'POST',
-        url: '/tweets',
-        data: data
-      }).done(function(){
-        escape()
-        loadTweets();
-
-      });
+function ajaxSubmitPost (data) {
+  $.ajax( {
+    method: 'POST',
+    url: '/tweets',
+    data: data
+  }).done(function() {
+    loadTweets();
+  });
 }
 
-$(document).ready(function(){
+$(document).ready(function() {
 
- loadTweets();
+  loadTweets();
 
- $( "form" ).on( "submit", function( event ) {
+  $( "form" ).on( "submit", function( event ) {
 
-  event.preventDefault();
+    event.preventDefault();
+    var $textNumber = $(this).find("textarea").val().length;
 
-  var $textNumber = $(this).find("textarea").val().length;
-  if ( $textNumber === 0){
-    alert("You need to enter something to submit!");
+    if ( $textNumber === 0) {
+      alert("You need to enter something to submit!");
   } else if ($textNumber > 140) {
-    alert("The maximum character is 140!!")
+      alert("The maximum character is 140!!")
   } else {
-    let tweetData = $(this).find("textarea").serialize();
-    ajaxSubmitPost(tweetData);
-    $(this).find("textarea").val("")
-
-  }
-});
-
+      let tweetData = $(this).find("textarea").serialize();
+      ajaxSubmitPost(tweetData);
+      $(this).find("textarea").val("")
+    }
+  });
 });
 
 
