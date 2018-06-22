@@ -3,14 +3,15 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+
+// escape any suspicious text input from users
 function escape(str) {
   var div = document.createElement('div');
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
 }
 
-
-function createTweetElement (tweet){
+function createTweetElement (tweet) {
 
   var $tweet = `
         <article class= "tweet-article">
@@ -31,11 +32,13 @@ function createTweetElement (tweet){
         </article>`;
 
   return $tweet;
- }
+
+}
+
 
 function renderTweets(tweets) {
-  let $tweets = $('#tweets-container');
 
+  let $tweets = $('#tweets-container');
   tweets.forEach(function(post) {
     var $newPost = createTweetElement(post);
     $tweets.prepend($newPost);
@@ -43,6 +46,7 @@ function renderTweets(tweets) {
 }
 
 function loadTweets() {
+
   $.ajax({
     url: '/tweets',
     type: 'GET'
@@ -52,23 +56,30 @@ function loadTweets() {
   });
 }
 
+function clearTweet () {
+
+  $('#tweets-container').empty();
+}
 
 function ajaxSubmitPost (data) {
+
   $.ajax( {
     method: 'POST',
     url: '/tweets',
     data: data
   }).done(function() {
     loadTweets();
+    clearTweet();
+
   });
 }
+
 
 $(document).ready(function() {
 
   loadTweets();
 
   $( "form" ).on( "submit", function( event ) {
-
     event.preventDefault();
     var $textNumber = $(this).find("textarea").val().length;
 
@@ -81,6 +92,7 @@ $(document).ready(function() {
       ajaxSubmitPost(tweetData);
       $(this).find("textarea").val("")
     }
+
   });
 });
 

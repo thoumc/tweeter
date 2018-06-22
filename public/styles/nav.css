@@ -8,32 +8,32 @@ nav {
   left: 0;
   padding-left: 2em ;
   padding-right: 2em ;
-
+  z-index: 2;
 }
 
-#nav-bar .logo{
+#nav-bar .logo {
   float: left;
   margin-right: 10px;
   width: 80px;
   height: 80px;
 }
 
-#nav-bar .header{
+#nav-bar .header {
   float: left;
   font-size: 2em ;
   line-height: 2.5;
 }
 
 nav > button {
-    float: right;
-    margin: 2em;
-    border-radius: 5px;
-    background-color: #eee;
-    color:#00a087;
-    height:2em;
+  float: right;
+  margin: 2em;
+  border-radius: 5px;
+  background-color: #eee;
+  color: #00a087;
+  height: 2em;
 }
 
 nav > button:hover {
   background-color: white;
-  color:black;
+  color: black;
 }

@@ -10,18 +10,17 @@ const app           = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static("public"));
 
-// Connecting db to mongo
+// MONGODB setup
 const {MongoClient} = require("mongodb");
 const MONGODB_URI= "mongodb://localhost:27017/tweeter";
 
 
 MongoClient.connect(MONGODB_URI, (err, db) => {
-  // throw error message if failed to connect
-  if (err){
+
+  if (err) {
     console.error(`Failed to connect: ${MONGODB_URI}`);
     throw err;
   }
-  //conection to mongo
   console.log(`Connected to mongodb: ${MONGODB_URI} `);
 
   // Because it exports a function that expects the `db` as a parameter, we can
@@ -31,7 +30,6 @@ MongoClient.connect(MONGODB_URI, (err, db) => {
 // The `tweets-routes` module works similarly: we pass it the `DataHelpers` object
 // so it can define routes that use it to interact with the data layer.
   const tweetsRoutes = require("./routes/tweets")(DataHelpers);
-
 
 // Mount the tweets routes at the "/tweets" path prefix:
   app.use("/tweets", tweetsRoutes);

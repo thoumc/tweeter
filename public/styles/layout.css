@@ -6,12 +6,17 @@
 html {
   box-sizing: border-box;
 }
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
 /*
  * Global layout stuff
+ */
+
+/*
+ * Compose text box
  */
 
 body {
@@ -22,36 +27,37 @@ body {
 
 
 main {
-
   width: 450px;
-  margin-top: 140px;
-  margin-right:auto;
+  margin-top: 80px;
+  margin-right: auto;
   margin-left: auto;
   background-color: white;
   color: black;
   padding-left: 2em;
   padding-right: 2em;
   padding-top: 10em;
-  padding-bottom: 10em
-
+  padding-bottom: 10em;
 }
 
-section{
+section {
   border: solid lightgrey 1px;
   border-radius: 5px;
   background-color: #eee;
-  padding-left:1em;
+  padding-left: 1em;
   padding-right: 1em;
   padding-bottom: 1em;
+  position: sticky;
+  top: 90px;
+  z-index: 1;
 }
 
-textarea{
+textarea {
   justify-content: stretch;
   width: 100%;
   align-content: center;
 }
 
-.counter{
+.counter {
   float: right;
   margin-top: 5px;
 }
@@ -66,7 +72,3 @@ form > input {
   margin-top: 10px;
   margin-bottom:10px;
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
