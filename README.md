@@ -5,8 +5,8 @@ Tweeter is a simple, single-page Twitter clone.
 This repository is the starter code for the project: Students will fork and clone this repository, then build upon it to practice their HTML, CSS, JS, jQuery and AJAX front-end skills, and their Node, Express and MongoDB back-end skills.
 
 ## Final Product
-!["Composing tweets:"](https://github.com/thoumc/tweeter/public/images/composing-tweet.png)
-!["Tweets:"](https://github.com/thoumc/tweeter/public/images/posted-tweet.png)
+!["Composing tweets:"](https://github.com/thoumc/tweeter/blob/master/public/images/composing-tweet.png)
+!["Tweets:"](https://github.com/thoumc/tweeter/blob/master/public/images/posted-tweet.png)
 
 ## Getting Started
 
